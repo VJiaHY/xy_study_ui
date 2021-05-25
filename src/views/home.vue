@@ -28,7 +28,7 @@
       },
       methods:{
          enterBlog(){
-         alert(1)
+            this.$router.push({name:"user"})
          }
       }
    }
@@ -40,7 +40,7 @@
 }*/
 /*首页面*/
 .height1{
-   background-image:url(../static/imgs/home.png);/* 首页背景图片 */
+   background-image:url("../../src/assets/imgs/home.png");/* 首页背景图片 */
    background-position: center;/* 背景图片位置始终居中显示 */
    background-attachment: fixed;/* 背景固定 */
    background-repeat: no-repeat;/* 不平铺 */
@@ -94,9 +94,7 @@
    margin: auto;
 }
 #height1_button {
-
-   margin-top: 20px;
-   margin-left: 48%;
+   margin: 20px auto;
    display: inline-block;
    height: 58px;
    width: 80px;

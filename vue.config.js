@@ -8,7 +8,7 @@ module.exports = {
     devServer: {
         open: true,
         host: 'localhost',
-        port: 8089,
+        port: 8090,
         https: false,
         hotOnly: false,
         disableHostCheck: true,
@@ -30,12 +30,12 @@ module.exports = {
                     '^/show': ''
                 }
             },
-            '/user':{
+            '/xy':{
                 target: 'http://localhost:8081',
                 ws: true,
                 changOrigin: true,
                 pathRewrite: {
-                    '^/user': ''
+                    '^/xy': '/xy'
                 }
             }
         },

@@ -2,11 +2,13 @@ import Vue from 'vue'
 import Element from  'element-ui'
 import 'element-ui/lib/theme-chalk/index.css' // 引入样式文件
 import Cookies from 'js-cookie'
+import App from "./App"
+
 // import store from './store'
 
 
 /*import VueRouter from 'vue-router'*/
-// import router from './router/router'
+ import router from './router/router'
 
 Vue.config.productionTip = false
 import BMap from 'vue-baidu-map'
@@ -42,5 +44,9 @@ Vue.use(Element, {
 //     next()
 //   }
 // })
-
+new Vue({
+  router: router,
+  render: h => h(App)
+}).$mount('#app')
+// export default router
 

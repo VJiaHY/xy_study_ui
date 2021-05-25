@@ -4,6 +4,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/home.vue'
 import Login from '../views/login.vue'
+import User from '../views/study/sysUser/index'
 /*import Blog from '../views/blog.vue'
 import BlogEdit from '../views/blogEdit.vue'
 import BlogDetail from '../views/blogDetail.vue'*/
@@ -20,6 +21,11 @@ const routes = [
         path: '/login',
         name: 'login',
         component: Login
+    },
+    {
+        path: '/user',
+        name: 'user',
+        component: User
     },
 /*    {
         path: '/Blog',
@@ -56,12 +62,10 @@ const routes = [
 ]
 
 const router = new VueRouter({
-    routes
+    routes:routes,
+    modal:"hash"
 })
 
-new Vue({
-    router,
+export default router
 
-}).$mount('#app')
-// export default router
 
