@@ -1,24 +1,27 @@
-# xy_study_ui
+基础微服务平台
+===============
+版本:v1.0.0
 
-## Project setup
+发布日期：2022-04-27 作者:JiaHY
+
+
+## 项目设置
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 开发编译
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 生产编译
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Lints 和修复文件
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
