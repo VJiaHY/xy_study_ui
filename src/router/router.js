@@ -5,6 +5,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/home.vue'
 import Login from '../views/login.vue'
 import User from '../views/study/sysUser/index'
+import Registration from '../views/study/sys/registration/index'
+import SYSubwayMap  from '../views/study/SYSubwayMap/index'
 /*import Blog from '../views/blog.vue'
 import BlogEdit from '../views/blogEdit.vue'
 import BlogDetail from '../views/blogDetail.vue'*/
@@ -12,21 +14,33 @@ import BlogDetail from '../views/blogDetail.vue'*/
 Vue.use(VueRouter)
 
 const routes = [
+
     {
         path: '/',
-        name: 'Home',
-        component: Home
+        name: 'Login',
+        component: Login
     },
     {
-        path: '/login',
-        name: 'login',
-        component: Login
+        path: '/home',
+        name: 'Home',
+        component: Home
     },
     {
         path: '/user',
         name: 'user',
         component: User
     },
+
+    {
+        path: '/SYSubwayMap',
+        name: 'SYSubwayMap',
+        component: SYSubwayMap
+    },
+    {
+        path: '/registration',
+        name: 'registration',
+        component: Registration
+    }
 /*    {
         path: '/Blog',
         name: 'Blog',

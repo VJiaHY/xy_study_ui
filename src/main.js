@@ -4,7 +4,6 @@ import 'element-ui/lib/theme-chalk/index.css' // 引入样式文件
 import Cookies from 'js-cookie'
 import App from "./App"
 
-// import store from './store'
 
 
 /*import VueRouter from 'vue-router'*/
@@ -12,6 +11,10 @@ import App from "./App"
 
 Vue.config.productionTip = false
 import BMap from 'vue-baidu-map'
+
+
+
+
 
 
 

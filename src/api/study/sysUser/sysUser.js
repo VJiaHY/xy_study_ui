@@ -4,7 +4,7 @@ import axios from '@/utils/request'
 export const getUserList = (query) => {
 
     return axios.request({
-        url: '/xy/user/searchPage',
+        url: '/show/user/searchPage',
         method: 'get',
         params: query
     })
@@ -13,7 +13,7 @@ export const getUserList = (query) => {
 
 export const delObj  = (id) => {
     return axios.request({
-        url: '/xy/user/delObj/'+id,
+        url: '/show/user/delObj/'+id,
         method: 'delete'
 
     })
@@ -22,7 +22,7 @@ export const delObj  = (id) => {
 
 export const findUser = () => {
     return axios.request({
-        url: '/xy/user/find',
+        url: '/show/user/find',
         method: 'get',
     })
 }

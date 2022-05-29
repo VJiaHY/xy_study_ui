@@ -1,111 +1,173 @@
 <template>
-   <div class="home">
-      <div class="height1">
-         <div class="height1_Div">
-            <h1>My-Blog</h1>
-            <p>只要朝着一个方向努力，一切都会变得心应手</p>
-            <el-button type="primary" id="height1_button" @click="enterBlog()"> 进   入 </el-button>
-         </div>
-      </div>
-   </div>
-
-
+  <div>
+    <span class="btn-mobile-menu">
+        <i class="btn-mobile-menu__icon"></i>
+        <i class="btn-mobile-close__icon hidden"></i>
+    </span>
+        <div id="panel" class="panel-cover">
+          <div class="panel-main">
+            <div class="panel-inverted">
+              <div class="panel-main__content">
+                <div class="right_to_left">
+                  <a href="#" title="" class="blog-button">
+                    <div class="img"><img src="https://s3.bmp.ovh/imgs/2022/03/31/5a9550ee1d06049d.jpg" alt="img" class="profilepic"></div>
+                    <div class="iUp">
+                      <div class="info-back">
+                        <h2>
+                          Fighting
+                        </h2>
+                        <p>
+                          2022 · 创造
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+<!--                <h1 class="panel-cover__title panel-title iUp">
+                  <a href="#" title="Jia Home">Jia Hu Yue</a>
+                </h1>
+                <p class="panel-cover__subtitle panel-subtitle iUp">Code Create Life</p>
+                <hr class="panel-cover__divider iUp" />
+                <p id="description" class="panel-cover__description iUp">如何得与凉风约, 不共尘沙一并来!
+                  <br/>
+                  <strong>-「中牟道中」</strong>
+                </p>
+                <div class="navigation-wrapper iUp">
+                  <div>
+                    <nav class="cover-navigation cover-navigation&#45;&#45;primary">
+                      <ul class="navigation">
+                        <li class="navigation__item">
+                          <a href="/" class="blog-button">首页</a>
+                        </li>
+                        <li class="navigation__item">
+                          <a href="/" class="blog-button" target="_blank">博客</a>
+                        </li>
+                        <li class="navigation__item">
+                          <a href="/" class="blog-button" target="_blank">简历</a>
+                        </li>
+                        <li class="navigation__item">
+                          <a href="//" class="blog-button" target="_blank">关于</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>-->
+              </div>
+            </div>
+<!--            <div class="panel-cover&#45;&#45;overlay cover-slate"></div>-->
+          </div>
+        </div>
+  </div>
 </template>
 
 <script>
-   export default{
-      data(){
-         return{
+export default {
+  data() {
+    return {}
+  },
+  created() {
 
-         }
-      },
-      created() {
-         /*初始动画效果*/
-         window.onload=function(){
-            let height1_Div=document.querySelector(".height1_Div");
-            height1_Div.style.transform="scale(1,1)";
-         }
-      },
-      methods:{
-         enterBlog(){
-            this.$router.push({name:"user"})
-         }
-      }
-   }
+  },
+  methods: {
+    getBingImgUrl(){
+
+    }
+  }
+}
 </script>
 
 <style scoped>
-/*.home{
-   background-image:url('../static/imgs/home.png');
-}*/
-/*首页面*/
-.height1{
-   background-image:url("../../src/assets/imgs/home.png");/* 首页背景图片 */
-   background-position: center;/* 背景图片位置始终居中显示 */
-   background-attachment: fixed;/* 背景固定 */
-   background-repeat: no-repeat;/* 不平铺 */
-   position: relative;/* 相对定位 */
-   height: 100vh;/* 100vh表示正好和浏览器窗口大小一致 */
+.btn-mobile-menu {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background: rgba(51, 51, 51, 0.98);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center
 }
-.height1_Div{
 
-   transition: 1.5s;/* 动画效果 */
-   transform: scale(.3);/* 缩放 */
-   color: rgb(231,181,76);/* 文字颜色 */
-   height: 20vh;/* 高度为浏览器20比 */
-   width: 100%;/* 宽度正好撑满 */
-   /* 以下是块级元素居中方案 */
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   margin: auto;
+.btn-mobile-menu__icon{
+  position: relative;
+  top: 10px;
+  color: #fff
 }
-.height1_Div h1{
-
-   font: 20px Helvetica Neue,Helvetica,PingFang SC,\5FAE\8F6F\96C5\9ED1,Tahoma,Arial,sans-serif;/* 设值文字 */
-   text-align:center;
-   display: block;/* 转换为块级元素，让其独占一行 */
-   font-size: 4em;/* 字体大小 */
-   /* 外边距*/
-   margin-block-start: 0.67em;
-   margin-block-end: 0.67em;
-   margin-inline-start: 0px;
-   margin-inline-end: 0px;
-
-
-
-
-
-
+.btn-mobile-close__icon {
+  position: relative;
+  top: 10px;
+  color: #fff
 }
-.height1_Div p{
-   font: 18px Helvetica Neue,Helvetica,PingFang SC,\5FAE\8F6F\96C5\9ED1,Tahoma,Arial,sans-serif;
-   text-align:center;
-   letter-spacing: 10px;/* 文字间距 */
-   display: block;
-   /* 外边距*/
-   margin-block-start: 1em;
-   margin-block-end: 1em;
-   margin-inline-start: 0px;
-   margin-inline-end: 0px;
-   /*margin-left: 35%;*/
-   margin: auto;
+.panel-cover {
+  width: 100%;
+  height: 100%;
+  background-position: center center
 }
-#height1_button {
-   margin: 20px auto;
-   display: inline-block;
-   height: 58px;
-   width: 80px;
-   line-height: 38px;
-   padding: 0 18px;
-   text-align: center;
-   font-size: 18px;
-   border: none;
-   border-radius: 2px;
-   cursor: pointer; /* 鼠标指针指入变为手的形状 */
-
+#panel{
+ background:url("http://www.lfppt.com/PPT_IMG/2021-10/17/202110170917255fb6e8908aff4f79b44ce325802f837ds.png") ;
+  cente:center;
+  no-repeat:#666;
+ }
+.panel-main {
+  display: table;
+  width: 100%;
+  height: 100%
+}
+.panel-inverted {
+  font-weight: 100;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4)
+}
+.right_to_left .img {
+  -webkit-transform-origin: 0 50%;
+  -moz-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  -o-transform-origin: 0 50%;
+  transform-origin: 0 50%
+}
+.blog-button{
 
 }
+.profilepic {
+  text-align: center;
+  display: block;
+  -webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0px 2px 20px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0px 2px 20px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 300px;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: #88acdb;
+  -webkit-transition: all .2s ease-in;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  text-align: center
+}
+.iUp {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 80px, 0);
+  -moz-transform: translate3d(0, 80px, 0);
+  -ms-transform: translate3d(0, 80px, 0);
+  -o-transform: translate3d(0, 80px, 0);
+  transform: translate3d(0, 80px, 0);
+  -webkit-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 2s cubic-bezier(0.19, 1, 0.22, 1)
+}
+.ih-item.circle.effect .info .info-back {
+  opacity: 1;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background: #333
+}
+
 </style>

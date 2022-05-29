@@ -1,4 +1,7 @@
 import axios from 'axios'
+import router from "../router/router";
+// 使用element-ui Message做消息提醒
+import { Message } from 'element-ui';
 
 class HttpRequest {
 
@@ -25,15 +28,21 @@ class HttpRequest {
     }
 
     interceptors (instance, url) {
+
         // 请求拦截
         instance.interceptors.request.use(config => {
             // 添加全局的loading...
             if (!Object.keys(this.queue).length) {
                 // Spin.show() // 不建议开启，因为界面不友好
             }
+            //添加token
+            if (sessionStorage.getItem("token")) {
+                config.headers.Authorization  = sessionStorage.getItem("token");
+            }
             this.queue[url] = true
             return config
         }, error => {
+            router.push("/")
             return Promise.reject(error)
         })
 
@@ -48,6 +57,15 @@ class HttpRequest {
         }, error => {
             this.destroy(url)
             let errorInfo = error.response
+            console.log(error.response.data.code)
+            switch (error.response.data.code) {
+                case 401:
+                    sessionStorage.removeItem("token")
+                    Message.error({
+                        message: '登录超时,请重新登录!'
+                    })
+                    router.push('/')
+            }
             if (!errorInfo) {
                 const { request: { statusText, status }, config } = JSON.parse(JSON.stringify(error))
                 errorInfo = {

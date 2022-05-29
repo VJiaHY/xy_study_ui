@@ -2,15 +2,13 @@ const path = require('path')
 const resolve = dir => {
     return path.join(__dirname, dir)
 }
-process.env.VUE_APP_TARGET = `http://127.0.0.1:8089`
+process.env.VUE_APP_TARGET = `http://127.0.0.1:8844`
 
 module.exports = {
     devServer: {
         open: true,
         host: 'localhost',
         port: 8090,
-        https: false,
-        hotOnly: false,
         disableHostCheck: true,
         proxy: {
             // 配置跨域
@@ -30,12 +28,12 @@ module.exports = {
                     '^/show': ''
                 }
             },
-            '/xy':{
-                target: 'http://localhost:8081',
+            '/sys':{
+                target: 'http://localhost:8844/',
                 ws: true,
                 changOrigin: true,
                 pathRewrite: {
-                    '^/xy': '/xy'
+                    '^/sys': '/sys'
                 }
             }
         },

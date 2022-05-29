@@ -1,136 +1,126 @@
 <template>
-   <!-- <div class="login">
-        <div class="login-name">铁岭市市本级行政事业单位固定资产二维码管理系统</div>
-        <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
-            <h3 class="title">铁岭市市本级行政事业单位<br/>固定资产二维码管理系统</h3>
-            <el-form-item prop="username">
-                <el-input v-model="loginForm.username" type="text" auto-complete="off" placeholder="账号">
-                    <svg-icon slot="prefix" icon-class="user" class="el-input__icon input-icon" />
-                </el-input>
+
+    <div class="login">
+        <div class="login-name">阿巴阿巴 再见麻瓜</div>
+<!--        <el-form  ref="loginForm" class="login-form"  :model="loginForm"  >
+            <h3 class="title">阿巴阿巴<br/>再见麻瓜</h3>
+            <el-form-item prop="username" lable="账号" :rules="[{required: true, message: '用户名不能为空', trigger: 'blur'}]">
+                <el-input type="text"  v-model="loginForm.userName" auto-complete="off"  placeholder="账号"></el-input>
             </el-form-item>
-            <el-form-item prop="password">
+            <el-form-item prop="password" lable="密码">
                 <el-input
                         v-model="loginForm.password"
                         type="password"
                         auto-complete="off"
                         placeholder="密码"
-                        @keyup.enter.native="handleLogin"
                 >
-                    <svg-icon slot="prefix" icon-class="password" class="el-input__icon input-icon" />
                 </el-input>
             </el-form-item>
-            <el-form-item prop="code">
-                <el-input
-                        v-model="loginForm.code"
-                        auto-complete="off"
-                        placeholder="验证码"
-                        style="width: 63%"
-                        @keyup.enter.native="handleLogin"
-                >
-                    <svg-icon slot="prefix" icon-class="validCode" class="el-input__icon input-icon" />
-                </el-input>
-                <div class="login-code">
-                    <img :src="codeUrl" @click="getCode" class="login-code-img"/>
-                </div>
-            </el-form-item>
-            <el-checkbox v-model="loginForm.rememberMe" style="margin:0px 0px 25px 0px;">记住密码</el-checkbox>
-            <el-form-item style="width:100%;">
-                <el-button
-                        :loading="loading"
-                        size="medium"
-                        type="primary"
-                        style="width:100%;"
-                        @click.native.prevent="handleLogin"
-                >
-                    <span v-if="!loading">登 录</span>
-                    <span v-else>登 录 中...</span>
-                </el-button>
-            </el-form-item>
-        </el-form>
-        &lt;!&ndash;  底部  &ndash;&gt;
-        <div class="el-login-footer">
-            <span>Copyright © 2019-2020 </span>
-        </div>
-    </div>-->
-    <div class="login">
-        <div class="login-name">阿巴阿巴 再见麻瓜</div>
-        <el-form  class="login-form"  :model="loginForm"  >
-            <h3 class="title">阿巴阿巴<br/>再见麻瓜</h3>
-            <el-form-item prop="username">
-                <el-input type="text" v-model="loginForm.userName" auto-complete="off" placeholder="账号">
-                 <!--   <svg-icon slot="prefix" icon-class="user" class="el-input__icon input-icon" />-->
-                </el-input>
-            </el-form-item>
-            <el-form-item prop="password">
-                <el-input
-                        v-model="loginForm.passWord"
-                        type="password"
-                        auto-complete="off"
-                        placeholder="密码"
 
-                >
-                 <!--   <svg-icon slot="prefix" icon-class="password" class="el-input__icon input-icon" />-->
-                </el-input>
-            </el-form-item>
-            <el-form-item prop="code">
-                <el-input
-                        auto-complete="off"
-                        placeholder="验证码"
-                        style="width: 63%"
-                >
-                  <!--  <svg-icon slot="prefix" icon-class="validCode" class="el-input__icon input-icon" />-->
-                </el-input>
-                <div class="login-code">
-                  <!--  <img :src="codeUrl" @click="getCode" class="login-code-img"/>-->
-                </div>
-            </el-form-item>
-            <el-checkbox style="margin:0px 0px 25px 0px;">记住密码</el-checkbox>
             <el-form-item style="width:100%;">
                 <el-button
                         size="medium"
                         type="primary"
                         style="width:100%;"
-
+                        @click="login"
                 >
-                    <span >登 录</span>
-                   <!-- <span v-else>登 录 中...</span>-->
+                  <span >登录</span>
+                   &lt;!&ndash; <span v-else>登 录 中...</span>&ndash;&gt;
                 </el-button>
-                <el-link  style="margin-left: 0" type="primary">忘记密码? </el-link>&nbsp;
+&lt;!&ndash;                <el-link  style="margin-left: 0" type="primary">忘记密码? </el-link>&nbsp;&ndash;&gt;
+               <el-link  style="margin-left: 0" type="primary" @click.native="openRegistration()">免费注册</el-link>
 
-               <el-link style="margin-left: 0" type="primary">免费注册</el-link>
+
+
             </el-form-item>
+        </el-form>-->
 
-        </el-form>
+      <el-form
+          :model="loginForm"
+          :rules="rules"
+          ref="loginForm"
+          class="login-form"
+
+      >
+        <h3 class="title">阿巴阿巴<br/>再见麻瓜</h3>
+        <el-form-item label="" prop="userName" class="elItem">
+          <el-input
+              type="text"
+              autocomplete="off"
+              v-model="loginForm.userName"
+              prefix-icon="el-icon-user-solid"
+              placeholder="请输入用户名"
+          ></el-input>
+        </el-form-item>
+        <el-form-item label="" prop="password">
+          <el-input
+              type="password"
+              autocomplete="off"
+              v-model="loginForm.password"
+              prefix-icon="el-icon-lock"
+              placeholder="请输入密码"
+          ></el-input>
+        </el-form-item>
+        <el-form-item class="btns">
+          <el-button type="primary" @click="login()">登录</el-button>
+
+        </el-form-item>
+      </el-form>
 
         <!--  底部  -->
         <div class="el-login-footer">
-            <span>Copyright © 2019-2020 </span>
+            <span>Copyright © Jiahy </span>
         </div>
     </div>
 </template>
 
 <script>
-
-
-
+  import {login} from '@/api/study/login/login'
     export default {
         name: "login",
-
         data(){
             return{
+              //登录表单
                 loginForm:{
-                    userName:"",
-                    passWord:"" ,
+                  userName:"",
+                  password:""
                 },
+              rules: {
+                userName: [
+                  {required: true, message: "用户名不能为空", trigger: "blur"}
+                ],
+                password: [
+                  {required: true, message: "密码不能为空", trigger: "blur"}
+                ],
+              }
+
             }
         },
 
         methods:{
-            a(){
-                alert(1)
-                this.$router.push({ name: 'Home'})
-            }
-        }
+          login(){
+            this.$refs["loginForm"].validate(valid => {
+              if (valid) {
+                login(this.loginForm).then(res => {
+                  console.log(res.code)
+                  if (res.code === 0){
+                    sessionStorage.setItem("token",res.data.token);
+                    this.$router.push('/SYSubwayMap')
+                  }else {
+                    this.$message.error(res.msg)
+                  }
+
+                })
+              }
+            });
+          },
+          //跳转注册页面
+          openRegistration(){
+            this.$router.push("/registration")
+
+          }
+        },
+
 
 
 

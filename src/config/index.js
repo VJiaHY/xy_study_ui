@@ -10,7 +10,7 @@ export default {
 
     // api请求基础路径
     baseUrl: {
-        dev: 'http://localhost:8089/',
+        dev: 'http://localhost:8844/',
         pro: 'https://xxx.com/api/',
         serve: 'http://localhost:8081/'
     },

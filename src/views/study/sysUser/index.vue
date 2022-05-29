@@ -178,11 +178,6 @@
               this.userForm = {}
                 this.getUserList()
             },
-
-
-
-
-
             deleteHandle(id){
                 var thit = this
                 this.$confirm('是否确认删除？', '提示', {
